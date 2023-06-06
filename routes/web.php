@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CohorteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/cohorte', [CohorteController::class,'index']);
+
+Route::get('/candidature', function(){
+    return 'Bonjour. ici candidature';
+});
+
+Route::get('/formations', function () {
+    return ' Les formations';
+});
+
+Route::resource('products', ProductController::class);
+
+Route::resource('students','StudentController');
+
